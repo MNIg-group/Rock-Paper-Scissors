@@ -101,7 +101,7 @@ playRound = playerSelection =>
 
     }
 
-    document.getElementById('results').innerHTML = results
+    document.getElementById('results').innerHTML += results;
     return
 
 }
