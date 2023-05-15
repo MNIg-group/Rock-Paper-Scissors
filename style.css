@@ -55,6 +55,22 @@ img {
     mix-blend-mode: color-burn;
 }
 
+/* Scores sections */
+
+#scores{
+    display: flex;
+    justify-content: space-between;
+}
+#scores .player-score,
+#scores .computer-score{
+font-weight: bolder;
+}
+span.value{
+    color: blue;
+    font-size: larger;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 #results {
     margin-top: 2rem;
 }
@@ -62,7 +78,7 @@ img {
 .round {
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
+    margin-top: 0.06rem;
 }
 
 .round .how {

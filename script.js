@@ -29,6 +29,8 @@ let playerScores = 0;
 let computerScores = 0;
 
 let items = document.querySelectorAll('.item');
+let scores = document.getElementById("scores");
+
 
 let randomNumber = Math.floor(Math.random() * 3);
 
@@ -49,7 +51,8 @@ getComputerChoice = () =>
 playRound = playerSelection =>
 {
     let computerSelection = getComputerChoice();
-    let results = ""
+    let results = "";
+    let score = "";
 
     if ((playerSelection == 'rock' && computerSelection == 'scissor') ||
         (playerSelection == 'scissor' && computerSelection == 'paper') ||
@@ -101,7 +104,9 @@ playRound = playerSelection =>
 
     }
 
-    document.getElementById('results').innerHTML += results;
+    document.getElementById('results').innerHTML = results;
+    score = `<div class="player-score">Your Scores: <span class="value">${ playerScores }</span></div> <div class="computer-score">Computer's Scores: <span class="value">${ computerScores }</span></div>`;
+    scores.innerHTML = score;
     return
 
 }
