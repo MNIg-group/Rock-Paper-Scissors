@@ -54,9 +54,9 @@ playRound = playerSelection =>
     let results = "";
     let score = "";
 
-    if ((playerSelection == 'rock' && computerSelection == 'scissor') ||
-        (playerSelection == 'scissor' && computerSelection == 'paper') ||
-        (playerSelection == 'paper' && computerSelection == 'rock'))
+    if ((playerSelection === 'rock' && computerSelection === 'scissor') ||
+        (playerSelection === 'scissor' && computerSelection === 'paper') ||
+        (playerSelection === 'paper' && computerSelection === 'rock'))
     {
         playerScores += 1;
         results = `<div class ="round">
@@ -68,13 +68,13 @@ playRound = playerSelection =>
         </div>
         </div>`
 
-        if (playerScores == 5)
+        if (playerScores === 5)
         {
-            alert("You won the game! Reload the page to play again");
             disableItems();
+            alert("You won the game! Reload the page to play again");
         }
 
-    } else if (playerSelection == computerSelection)
+    } else if (playerSelection === computerSelection)
     {
         results = `<div class ="round">
         <div>
@@ -96,10 +96,10 @@ playRound = playerSelection =>
         </div>
         </div>`
 
-        if (computerScores == 5)
+        if (computerScores === 5)
         {
-            alert("I won the game! Reload the page to play again");
             disableItems();
+            alert("I won the game! Reload the page to play again");
         }
 
     }

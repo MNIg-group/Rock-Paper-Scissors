@@ -1,3 +1,18 @@
+:root {
+    --primary-color: #694b09;
+    --secondary-color: #3adeec;
+    --medium-primary-color: #597c55;
+    --medium-secondary-color: #4aada0;
+}
+
+p {
+    font-size: larger;
+}
+
+.item:disabled:hover {
+    cursor: not-allowed;
+}
+
 body {
     box-sizing: border-box;
     display: flex;
@@ -6,12 +21,14 @@ body {
 }
 
 #container {
-    background-color: rgb(220, 220, 220);
+    background-color: var(--primary-color);
+    color: var(--medium-secondary-color);
     padding: 2rem 2rem 0.5rem 2rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 4rem;
+    text-align: center;
 }
 
 #game {
@@ -27,25 +44,31 @@ body {
     justify-content: space-around;
 }
 
-.play-zone div  {
-    background-color: rgb(113, 118, 133);
+.play-zone div {
+    background-color: var(--medium-primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
     aspect-ratio: 1/1;
     border-radius: 5px;
-    width:15%;
+    width: 15%;
 }
-.play-zone div button{
+
+.play-zone div button {
     background-color: transparent;
     aspect-ratio: 1/1;
     border-radius: 5px;
     border: none;
 }
 
-.play-zone div:is(:hover, :focus) {
+.item {
     cursor: pointer;
 }
+
+.item:active {
+    background-color: var(--medium-secondary-color);
+}
+
 
 img {
     width: 100%;
@@ -57,16 +80,18 @@ img {
 
 /* Scores sections */
 
-#scores{
+#scores {
     display: flex;
     justify-content: space-between;
 }
+
 #scores .player-score,
-#scores .computer-score{
-font-weight: bolder;
+#scores .computer-score {
+    font-weight: bolder;
 }
-span.value{
-    color: blue;
+
+#scores span.value {
+    color: var(--secondary-color);
     font-size: larger;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
@@ -82,9 +107,9 @@ span.value{
 }
 
 .round .how {
-    color: rgba(22, 22, 2, 0.842);
+    color: var(--secondary-color);
     font-weight: bold;
     font-size: medium;
     width: 65%;
-    background-color: rgba(0, 0, 0, 0.171);
+    background-color: var(--medium-primary-color);
 }
