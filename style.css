@@ -9,9 +9,63 @@ p {
     font-size: larger;
 }
 
-.item:disabled:hover {
+.item:disabled:active {
     cursor: not-allowed;
+    background-color: inherit;
 }
+
+/* notification */
+
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: none;
+}
+
+.popup-container.active {
+    display: flex;
+}
+
+.popup {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    width: 500px;
+    padding: 1rem;
+    position: relative;
+    margin: 5% auto;
+    height: fit-content;
+
+    color: var(--secondary-color);
+    font-weight: italic;
+    text-align: center;
+    font-size: larger;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+.popup button {
+    position: absolute;
+    background-color: var(--medium-primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 6px;
+    font-size: 1.5rem;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.popup button:active {
+    background-color: var(--medium-secondary-color);
+    color: var(--primary-color);
+}
+
+/*---------------------------*/
 
 body {
     box-sizing: border-box;

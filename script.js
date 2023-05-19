@@ -1,32 +1,23 @@
-//                    Rock Paper Scissors Algorithm:
-
-/* 
-There are two players of the game(Computer and Player);
-Computer play by choosing the random variable
-while the player has to choose the variable by clicking on the button
-
-step 1:
-if both players choose the same variable then the result
-the game is tied and is usually immediately replayed to break the tie.
-
-step 2:
-if the choices are Paper and Rock then the result are ("paper covers rock")
-
-step 3:
-if the choices are Rock and Scissors then the result are ("rock crushes scissors")
-
-step 4:
-if the choice are Paper and Scissors then the result are  ("scissors cut paper")
-
-next  create round function to check round played and marks the highest marks are 5 marks and 
-then end the game.
-
-*/
-
-
 let getComputerChoice;
 let playerScores = 0;
 let computerScores = 0;
+
+// Notification center
+const output = document.getElementById('output');
+const close = document.getElementById('close');
+const message = document.getElementById('output-message');
+
+close.addEventListener('click', () =>
+{
+    output.classList.remove('active');
+})
+
+function createOutput (msg)
+{
+    output.classList.add('active');
+    message.innerText = msg;
+}
+// End of Notification Center 
 
 let items = document.querySelectorAll('.item');
 let scores = document.getElementById("scores");
@@ -71,7 +62,7 @@ playRound = playerSelection =>
         if (playerScores === 5)
         {
             disableItems();
-            alert("You won the game! Reload the page to play again");
+            createOutput("Congratulation! You won the game!");
         }
 
     } else if (playerSelection === computerSelection)
@@ -99,7 +90,7 @@ playRound = playerSelection =>
         if (computerScores === 5)
         {
             disableItems();
-            alert("I won the game! Reload the page to play again");
+            createOutput("I won the game!");
         }
 
     }
